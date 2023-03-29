@@ -5,20 +5,47 @@ import Timestamp from "./Timestamp";
 import Message from "./Message";
 import Actions from "./Actions";
 
-function Tweet(props) {
+// function Tweet(props) {
+//   // const {name, handle} = props.tweet.user
+//   // const {message} = props.tweet
+//   return (
+//     <div className="tweet">
+
+//       <ProfileImage image={props.tweet.user.image} />
+
+//       <div className='body'>
+//         <div className='top'>
+//           <User userData={props.tweet.user} />
+//           <Timestamp time={props.tweet.timestamp} />
+//         </div>
+//         <Message message={props.tweet.message} />
+//         <Actions/>
+
+//       </div>
+
+//       <i className="fas fa-ellipsis-h"></i>
+//     </div>
+//   );
+// }
+
+function Tweet({tweet}) {
   // const {name, handle} = props.tweet.user
   // const {message} = props.tweet
+  // {console.log(tweet)}
+  const {user, timestamp, message} = tweet
+  // {console.log(user)}
+
   return (
     <div className="tweet">
 
-      <ProfileImage image={props.tweet.user.image} />
+      <ProfileImage image={user.image} />
 
       <div className='body'>
         <div className='top'>
-          <User userData={props.tweet.user} />
-          <Timestamp time={props.tweet.timestamp} />
+          <User userData={user} />
+          <Timestamp time={timestamp} />
         </div>
-        <Message message={props.tweet.message} />
+        <Message message={message} />
         <Actions/>
 
       </div>
